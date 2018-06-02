@@ -1,0 +1,11 @@
+<div class="box">
+  <h1>Show</h1>
+  <% case @property.properties_type %>
+    <% when 'appartement' %>
+    <p> Un <strong>Appartement</strong> </p>
+    <% when 'maison' %>
+    <p> Une <strong>maison</strong></p>
+    <% else %>
+    <p> On avait demandé un appartement ou une maison, <strong>patate !</strong></p>
+  <% end %>
+</div>
