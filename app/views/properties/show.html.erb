@@ -3,6 +3,16 @@
   <% case @property.properties_type %>
     <% when 'appartement' %>
     <p> Un <strong>Appartement</strong> </p>
+      <% case @property.floor %>
+        <% when 0..2 %>
+        <p>Ca va, tu ne risques pas de te fatiguer avec que <strong> <%= pluralize(@property.floor, "étage") %> </strong> à monter</p>
+        <% when 3..5 %>
+        <p>Pas de problèmes, ça se monte sans difficultés <strong><%= @property.floor %> étages</strong> </p>
+        <% when 6..8 %>
+        <p>Ca commence à faire pas mal <%= @property.floor %> étages</p>
+        <% when 9..10 %>
+        <p>Alors là, respect ! <strong><%= @property.floor %> étages</strong> </p>
+      <%end  %>
     <% when 'maison' %>
     <p> Une <strong>maison</strong></p>
     <% else %>
